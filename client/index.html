@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-GB" class="core">
+  <head>
+    <include src="includes/html-head.html"></include>
+
+    <!--
+      TODO: Fill in these MANDATORY tags and
+            REMOVE THIS COMMENT
+
+    <title>@@TITLE</title>
+    <meta name="twitter:title" content="@@TITLE">
+    <meta property="og:title" content="@@TITLE">
+
+    <meta name="description" content="@@DESCRIPTION">
+    <meta name="twitter:description" content="@@DESCRIPTION">
+    <meta property="og:description" content="@@DESCRIPTION">
+
+    <link rel="canonical" href="@@URL">
+    <meta name="twitter:url" content="@@URL">
+    <meta property="og:url" content="@@URL">
+
+    <link rel="image_src" href="@@IMAGE">
+    <meta name="twitter:image" content="@@IMAGE">
+    <meta property="og:image" content="@@IMAGE">
+    -->
+
+    <!--
+      TODO: Select Twitter card type -
+            "summary" or "summary_large_image"
+
+            Twitter card docs:
+            https://dev.twitter.com/cards/markup
+    -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ft">
+
+    <!--
+      TODO: optional author info
+    <meta name="twitter:creator" content="@individual_account">
+    <meta property="article:author" content="">
+    -->
+
+  </head>
+  <body>
+
+
+    <!--
+      TODO: REPLACE THIS COMMENT WITH A TRACKING SNIPPET
+      http://ft-interactive.github.io/tracking-snippet-generator/
+    -->
+
+    <include src="includes/header.html"></include>
+    <main role="main">
+      <article class="article">
+        <div class="article-head o-grid-container">
+          <div class="o-grid-row">
+            <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
+
+              <include src="includes/share.html"></include>
+
+              <include src="includes/article-head.html"></include>
+
+            </header>
+          </div>
+        </div>
+        <div class="article-body o-typography-body-wrapper">
+
+
+
+          <!-- TODO:
+                replace with your article body html
+          -->
+          <include src="includes/mock-article-content.html"></include>
+
+
+
+        </div>
+      </article>
+    </main>
+    <include src="includes/footer.html"></include>
+
+    <script async>
+    queue([
+      'scripts/main.js'
+    ]);
+    </script>
+
+  </body>
+</html>
