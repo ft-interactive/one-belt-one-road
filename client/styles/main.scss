@@ -1,4 +1,5 @@
 @import 'o-colors/main';
+@import 'o-grid/main';
 
 $font-sans: MetricWeb, sans-serif;
 $font-serif: Georgia, serif;
@@ -110,6 +111,13 @@ $share-button-size: 38px;
 }
 
 .obor-container {
-  margin-left: 50%;
+  margin-top: calc(37.89vh - 46px);
   overflow-y: scroll;
+}
+
+@include oGridRespondTo(L) {
+  .obor-container {
+    margin-top: 0;
+    margin-left: 62.11vw;
+  }
 }
