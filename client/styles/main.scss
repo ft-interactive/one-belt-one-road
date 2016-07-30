@@ -155,7 +155,12 @@ $share-button-size: 38px;
   }
 }
 
+.obor-items:last-child {
+    margin-bottom: calc(0.8em + 40px);
+}
+
 .o-footer {
   position: relative;
   z-index: 2;
+  margin-top: 0 !important;
 }
