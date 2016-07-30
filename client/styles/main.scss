@@ -117,6 +117,7 @@ $share-button-size: 38px;
   width: 100%;
   height: calc(37.89vh + 46px);
   z-index: 1;
+  border-bottom: 1px solid #e9decf;
 }
 
 .obor-container {
@@ -135,6 +136,7 @@ $share-button-size: 38px;
   .obor-container {
     margin-top: 0;
     margin-left: 50vw;
+    border-left: 1px solid #e9decf;
   }
 }
 
@@ -147,6 +149,7 @@ $share-button-size: 38px;
   .obor-container {
     margin-top: 0;
     margin-left: 62.11vw;
+    border-left: 1px solid #e9decf;
   }
 }
 
