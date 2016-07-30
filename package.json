@@ -35,5 +35,8 @@
     "postinstall": "bower install",
     "start": "nodemon --watch gulpfile.babel.js --exec 'gulp clean && gulp watch'",
     "test": "npm run build"
+  },
+  "dependencies": {
+    "mapbox-gl": "^0.21.0"
   }
 }
