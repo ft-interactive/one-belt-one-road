@@ -5,5 +5,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZGF2aWRiam91cm5vIiwiYSI6IjY2YmJkNDRkMGZhMjQ3Z
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v9',
+  attributionControl: false,
   interactive: false,
 });
