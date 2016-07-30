@@ -124,7 +124,7 @@ $share-button-size: 38px;
   position: relative;
   margin-top: calc(37.89vh);
   overflow-y: scroll;
-  background-color: oColorsGetPaletteColor('pink');
+  background-color: rgba(255, 241, 224, 0.85);
 }
 
 @include oGridRespondTo($from: iPhone4, $until: M) {
@@ -137,6 +137,7 @@ $share-button-size: 38px;
     margin-top: 0;
     margin-left: 50vw;
     border-left: 1px solid #e9decf;
+    -webkit-backdrop-filter: blur(12px);
   }
 }
 
@@ -150,6 +151,7 @@ $share-button-size: 38px;
     margin-top: 0;
     margin-left: 62.11vw;
     border-left: 1px solid #e9decf;
+    -webkit-backdrop-filter: blur(12px);
   }
 }
 
