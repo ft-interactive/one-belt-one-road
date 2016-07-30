@@ -100,3 +100,16 @@ $share-button-size: 38px;
   }
 
 }
+
+// Custom
+.map {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.obor-container {
+  margin-left: 50%;
+  overflow-y: scroll;
+}
