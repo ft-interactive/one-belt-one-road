@@ -1,13 +1,14 @@
 const mapboxgl = require('mapbox-gl');
+let activeLocationName = 'intro';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZGF2aWRiam91cm5vIiwiYSI6IjY2YmJkNDRkMGZhMjQ3ZDJkN2YxZDgyY2UyNjAyMjBjIn0.WQw7O86xdByVX0nwrmFLQw';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZmluYW5jaWFsdGltZXMiLCJhIjoiY0JjekRZNCJ9.WyRznmEEeKdrKLnfr4NpTA';
 
 const mapWidth = document.querySelector('#map').clientWidth;
 const startZoom = mapWidth < 768 ? Math.ceil(mapWidth / 250) : Math.floor(mapWidth / 250);
 
 const map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v9',
+  style: 'mapbox://styles/financialtimes/cis0irbgt005ygxm2pqnae1df',
   attributionControl: false,
   interactive: false,
   center: [66.7638578, 38.8367267],
@@ -90,8 +91,6 @@ const locations = {
     zoom: startZoom * 1.1,
   },
 };
-
-let activeLocationName = 'intro';
 
 function isElementOnScreen(id) {
   const element = document.getElementById(id);
