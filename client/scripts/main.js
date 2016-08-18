@@ -6,6 +6,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZmluYW5jaWFsdGltZXMiLCJhIjoiY0JjekRZNCJ9.WyRz
 const mapWidth = document.querySelector('#map').clientWidth;
 const startZoom = mapWidth < 768 ? Math.ceil(mapWidth / 250) : Math.floor(mapWidth / 250);
 
+console.log(startZoom);
+
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/financialtimes/cis0irbgt005ygxm2pqnae1df',
@@ -48,7 +50,7 @@ const locations = {
     pitch: 0,
     zoom: startZoom * 1.1,
   },
-  'line-d': {
+  'central-asia-china-d': {
     center: [72.152674, 42.267858],
     bearing: 0,
     speed: 0.5,
