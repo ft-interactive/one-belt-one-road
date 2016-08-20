@@ -21,7 +21,7 @@ const map = new mapboxgl.Map({
 });
 
 const locations = {
-  'intro': {
+  intro: {
     center: [66.7638578, 38.8367267],
     bearing: 0,
     pitch: 0,
