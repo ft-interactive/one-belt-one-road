@@ -50,7 +50,7 @@ const locations = {
     pitch: 0,
     zoom: startZoom * 1.1,
   },
-  'central-asia-china-d': {
+  'central-asia-china-line-d': {
     center: [72.152674, 42.267858],
     bearing: 0,
     speed: 0.5,
