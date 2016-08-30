@@ -109,6 +109,14 @@ function setActiveLocation(locationName) {
   document.getElementById(locationName).classList.toggle('active');
   document.getElementById(activeLocationName).classList.toggle('active');
 
+  if (activeLocationName !== 'intro') {
+    map.setPaintProperty(`${activeLocationName}-polygon`, 'fill-opacity', 0);
+  }
+
+  if (locationName !== 'intro') {
+    map.setPaintProperty(`${locationName}-polygon`, 'fill-opacity', 0.75);
+  }
+
   activeLocationName = locationName;
 }
 
