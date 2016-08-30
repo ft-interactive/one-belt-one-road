@@ -78,7 +78,7 @@ const locations = {
     pitch: 0,
     zoom: startZoom * 1.1,
   },
-  'freight-trains': {
+  'china-tehran': {
     center: [72.152674, 42.267858],
     bearing: 0,
     speed: 0.5,
