@@ -123,16 +123,16 @@ map.on('load', () => {
           bearing: 90,
           pitch: 60,
           speed: 0.3,
-          zoom: startZoom * 1.3,
-          geometryType: 'circle',
+          zoom: startZoom * 1.2,
+          geometryType: 'line',
         },
         'new-delhi-china': {
           center: [76.24, 33.45],
-          bearing: 0,
-          speed: 0.5,
-          pitch: 0,
-          zoom: startZoom * 1.1,
-          geometryType: 'none',
+          bearing: 84,
+          pitch: 60,
+          speed: 0.3,
+          zoom: startZoom * 1.4,
+          geometryType: 'line',
         },
       };
 
