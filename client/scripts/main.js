@@ -1,4 +1,12 @@
 const mapboxgl = require('mapbox-gl');
+// const textLayers = [
+//   'obor_port_labels',
+//   'obor_country_labels',
+//   'obor_city_labels',
+//   'obor_capital_labels',
+//   'obor_khorgos_alashankou_labels',
+// ];
+let locationNames = {};
 let activeLocationName = 'intro';
 let startZoom = {};
 let locations = {};
@@ -17,6 +25,10 @@ function isElementOnScreen(id) {
 
   return bounds.top < window.innerHeight * 0.67 && bounds.bottom > window.innerHeight * 0.67;
 }
+
+// function setFont(layer) {
+//   map.setLayoutProperty(layer, 'text-font', ['MetricWeb', 'sans-serif']);
+// }
 
 function setActiveLocation(locationName) {
   if (locationName === activeLocationName) return;
@@ -37,8 +49,6 @@ function setActiveLocation(locationName) {
   if (locations[locationName].geometryType !== 'none') {
     map.setPaintProperty(`${locationName}-feature`,
         `${locations[locationName].geometryType}-opacity`, 1);
-
-    console.log(map.getPaintProperty(`${locationName}-feature`, 'line-opacity'));
   }
 
   activeLocationName = locationName;
@@ -47,11 +57,13 @@ function setActiveLocation(locationName) {
 map.on('load', () => {
   const loader = setInterval(() => {
     if (map.loaded() === true) {
-      console.log('Loaded');
+      clearInterval(loader);
 
       startZoom = map.getZoom();
 
-      clearInterval(loader);
+      console.log('Loaded');
+
+      console.log(`Starting zoom level is ${startZoom}`);
 
       locations = {
         intro: {
@@ -136,7 +148,9 @@ map.on('load', () => {
         },
       };
 
-      console.log(`Starting zoom level is ${startZoom}`);
+      locationNames = Object.keys(locations);
+
+      // textLayers.forEach(setFont);
     } else {
       console.log('Loading...');
     }
@@ -144,8 +158,6 @@ map.on('load', () => {
 });
 
 window.onscroll = () => {
-  const locationNames = Object.keys(locations);
-
   for (let i = 0; i < locationNames.length; i++) {
     const locationName = locationNames[i];
 
