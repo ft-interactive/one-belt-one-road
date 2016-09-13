@@ -14,7 +14,8 @@ body {
   font-family: $font-sans;
 }
 
-.o-header{
+header.o-header{
+  position: relative;
   &--light {
     border-bottom: 1px solid #e9decf;
   }
@@ -111,7 +112,7 @@ $share-button-size: 38px;
 }
 
 .map {
-  position: fixed;
+  position: relative;
   top: 0;
   bottom: 0;
   width: 100vw;
@@ -122,9 +123,21 @@ $share-button-size: 38px;
 
 .obor-container {
   position: relative;
-  margin-top: 37.89vh;
+  // margin-top: 37.89vh;
   overflow-y: scroll;
   background-color: rgba(255, 241, 224, 0.85);
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.sticky:before,
+.sticky:after {
+  content: '';
+  display: table;
 }
 
 @include oGridRespondTo($from: iPhone4, $until: M) {
@@ -132,6 +145,7 @@ $share-button-size: 38px;
     width: 50vw;
     height: 100vh;
     z-index: 0;
+    float: left;
   }
 
   .obor-container {
@@ -147,6 +161,7 @@ $share-button-size: 38px;
     width: 62.11vw;
     height: 100vh;
     z-index: 0;
+    float: left;
   }
 
   .obor-container {

@@ -1,4 +1,5 @@
 const mapboxgl = require('mapbox-gl');
+const stickyfill = window.Stickyfill;
 // const textLayers = [
 //   'obor_port_labels',
 //   'obor_country_labels',
@@ -79,47 +80,47 @@ map.on('load', () => {
           bearing: 114,
           pitch: 60,
           speed: 0.3,
-          zoom: startZoom * 1.1,
+          zoom: startZoom * 1.45,
           geometryType: 'line',
         },
         'khorgos-aktau': {
-          center: [66.9237, 48.0196],
-          bearing: 116,
+          center: [61.9237, 48.0196],
+          bearing: 114,
           pitch: 60,
           speed: 0.3,
-          zoom: startZoom * 1.1,
+          zoom: startZoom * 1.38,
           geometryType: 'line',
         },
         'central-asia-china': {
           center: [72.152674, 42.267858],
           bearing: 106,
-          speed: 0.2,
+          speed: 0.3,
           pitch: 60,
-          zoom: startZoom * 1.2,
+          zoom: startZoom * 1.44,
           geometryType: 'line',
         },
         'central-asia-china-line-d': {
           center: [68.78, 38.536667],
           bearing: 97,
-          speed: 0.2,
+          speed: 0.3,
           pitch: 60,
-          zoom: startZoom * 1.3,
+          zoom: startZoom * 1.57,
           geometryType: 'line',
         },
         'china-kg-uzb': {
           center: [74.26, 40.91],
           bearing: 104,
-          speed: 0.2,
+          speed: 0.3,
           pitch: 60,
-          zoom: startZoom * 1.4,
+          zoom: startZoom * 1.57,
           geometryType: 'line',
         },
         'khorgos-gateway': {
           center: [80.414444, 44.125556],
           bearing: 118,
-          speed: 0.2,
+          speed: 0.3,
           pitch: 60,
-          zoom: startZoom * 1.4,
+          zoom: startZoom * 1.57,
           geometryType: 'circle',
         },
         'laptops-chicken': {
@@ -127,7 +128,7 @@ map.on('load', () => {
           bearing: 116,
           pitch: 60,
           speed: 0.3,
-          zoom: startZoom * 1.05,
+          zoom: startZoom * 1.38,
           geometryType: 'line',
         },
         'china-tehran': {
@@ -135,7 +136,7 @@ map.on('load', () => {
           bearing: 90,
           pitch: 60,
           speed: 0.3,
-          zoom: startZoom * 1.2,
+          zoom: startZoom * 1.38,
           geometryType: 'line',
         },
         'new-delhi-china': {
@@ -143,7 +144,7 @@ map.on('load', () => {
           bearing: 84,
           pitch: 60,
           speed: 0.3,
-          zoom: startZoom * 1.4,
+          zoom: startZoom * 1.38,
           geometryType: 'line',
         },
       };
@@ -168,3 +169,5 @@ window.onscroll = () => {
     }
   }
 };
+
+stickyfill.add(document.getElementById('map'));
