@@ -22,7 +22,7 @@ const map = new mapboxgl.Map({
 
 map.on('load', () => {
   map.fitBounds([[37.6155228259, 55.7521641226], [103.23, 35.33]], { padding: 25 });
-  
+
   const loader = setInterval(() => {
     if (map.loaded() === true) {
       clearInterval(loader);
@@ -172,4 +172,4 @@ window.onscroll = () => {
   }
 };
 
-stickyfill.add(document.getElementById('map'));
+stickyfill.add(document.getElementById('sticky-container'));
