@@ -67,87 +67,87 @@ map.on('load', () => {
       console.log(`Starting zoom level is ${startZoom}`);
 
       locations = {
-                intro: {
-                  center: [70.42276141295, 46.4887879942319],
-                  bearing: 0,
-                  pitch: 0,
-                  speed: 0.3,
-                  zoom: startZoom,
-                  geometryType: 'none'
-                },
-                'moscow-kazan': {
-                  center: [37.616667, 55.75],
-                  bearing: 114,
-                  pitch: 60,
-                  speed: 0.3,
-                  zoom: startZoom * 1.45,
-                  geometryType: 'line'
-                },
-                'khorgos-aktau': {
-                  center: [61.9237, 48.0196],
-                  bearing: 114,
-                  pitch: 60,
-                  speed: 0.3,
-                  zoom: startZoom * 1.38,
-                  geometryType: 'line'
-                },
-                'central-asia-china': {
-                  center: [72.152674, 42.267858],
-                  bearing: 106,
-                  pitch: 60,
-                  speed: 0.3,
-                  zoom: startZoom * 1.44,
-                  geometryType: 'line'
-                },
-                'central-asia-china-line-d': {
-                  center: [68.78, 38.536667],
-                  bearing: 97,
-                  pitch: 60,
-                  speed: 0.3,
-                  zoom: startZoom * 1.57,
-                  geometryType: 'line'
-                },
-                'china-kg-uzb': {
-                  center: [74.26, 40.91],
-                  bearing: 104,
-                  pitch: 60,
-                  speed: 0.3,
-                  zoom: startZoom * 1.57,
-                  geometryType: 'line'
-                },
-                'khorgos-gateway': {
-                  center: [80.414444, 44.125556],
-                  bearing: 118,
-                  pitch: 60,
-                  speed: 0.3,
-                  zoom: startZoom * 1.57,
-                  geometryType: 'line'
-                },
-                'laptops-chicken': {
-                  center: [66.9237, 48.0196],
-                  bearing: 116,
-                  pitch: 60,
-                  speed: 0.3,
-                  zoom: startZoom * 1.38,
-                  geometryType: 'line'
-                },
-                'china-tehran': {
-                  center: [51.4, 35.7167],
-                  bearing: 90,
-                  pitch: 60,
-                  speed: 0.3,
-                  zoom: startZoom * 1.38,
-                  geometryType: 'line'
-                },
-                'new-delhi-china': {
-                  center: [76.24, 33.45],
-                  bearing: 84,
-                  pitch: 60,
-                  speed: 0.3,
-                  zoom: startZoom * 1.38,
-                  geometryType: 'line'
-                }
-              };
+        intro: {
+          center: [70.42276141295, 46.4887879942319],
+          bearing: 0,
+          pitch: 0,
+          speed: 0.3,
+          zoom: startZoom,
+          geometryType: 'none',
+        },
+        'moscow-kazan': {
+          center: [37.616667, 55.75],
+          bearing: 114,
+          pitch: 60,
+          speed: 0.3,
+          zoom: startZoom * 1.45,
+          geometryType: 'line',
+        },
+        'khorgos-aktau': {
+          center: [61.9237, 48.0196],
+          bearing: 114,
+          pitch: 60,
+          speed: 0.3,
+          zoom: startZoom * 1.38,
+          geometryType: 'line',
+        },
+        'central-asia-china': {
+          center: [72.152674, 42.267858],
+          bearing: 106,
+          pitch: 60,
+          speed: 0.3,
+          zoom: startZoom * 1.44,
+          geometryType: 'line',
+        },
+        'central-asia-china-line-d': {
+          center: [68.78, 38.536667],
+          bearing: 97,
+          pitch: 60,
+          speed: 0.3,
+          zoom: startZoom * 1.57,
+          geometryType: 'line',
+        },
+        'china-kg-uzb': {
+          center: [74.26, 40.91],
+          bearing: 104,
+          pitch: 60,
+          speed: 0.3,
+          zoom: startZoom * 1.57,
+          geometryType: 'line',
+        },
+        'khorgos-gateway': {
+          center: [80.414444, 44.125556],
+          bearing: 118,
+          pitch: 60,
+          speed: 0.3,
+          zoom: startZoom * 1.57,
+          geometryType: 'line',
+        },
+        'laptops-chicken': {
+          center: [66.9237, 48.0196],
+          bearing: 116,
+          pitch: 60,
+          speed: 0.3,
+          zoom: startZoom * 1.38,
+          geometryType: 'line',
+        },
+        'china-tehran': {
+          center: [51.4, 35.7167],
+          bearing: 90,
+          pitch: 60,
+          speed: 0.3,
+          zoom: startZoom * 1.38,
+          geometryType: 'line',
+        },
+        'new-delhi-china': {
+          center: [74.487506, 36.608645],
+          bearing: 84,
+          pitch: 60,
+          speed: 0.3,
+          zoom: startZoom * 1.38,
+          geometryType: 'line',
+        },
+      };
 
       locationNames = Object.keys(locations);
 
