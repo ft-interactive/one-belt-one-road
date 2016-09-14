@@ -122,20 +122,17 @@ exec(function(){
   ].join(' '));
 });
 
-// Load the polyfill service with custom features. Exclude big unneeded polyfills.
-// and use ?callback= to clear the queue of scripts to load
 var polyfill_features = [
-  'default',
-  'requestAnimationFrame',
-  'Promise',
+  'default-3.6',
   'matchMedia',
-  'HTMLPictureElement',
-  'fetch|always|gated'
+  'fetch|always|gated',
+  'IntersectionObserver',
+  'HTMLPictureElement'
 ];
 
 var polfill_url = 'https://cdn.polyfill.io/v2/polyfill.min.js?callback=clear_queue&features='
                     + polyfill_features.join(',')
-                    + '&excludes=Symbol,Symbol.iterator,Symbol.species,Map,Set';
+                    + '&excludes=Symbol,Symbol.iterator,Symbol.species';
 
 exec(polfill_url, true, true)
 
