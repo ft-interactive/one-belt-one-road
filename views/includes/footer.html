@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=o-footer@^5.0.1">
+<link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=o-footer@^5.0.3">
 <footer class="o-footer o-footer--theme-dark" data-o-component="o-footer" data-o-footer--no-js="">
 	<div class="o-footer__container">
 
@@ -119,7 +119,7 @@
 
 		<div class="o-footer__copyright" role="contentinfo">
 			<small>
-				Markets data delayed by at least 15 minutes. &#xA9; THE FINANCIAL TIMES LTD 2016.
+				Markets data delayed by at least 15 minutes. &#xA9; THE FINANCIAL TIMES LTD {{ now() | strftime('%Y') }}.
 				<abbr title="Financial Times" aria-label="F T">FT</abbr> and &#x2018;Financial Times&#x2019; are trademarks of The Financial Times Ltd.<br>
 				The Financial Times and its journalism are subject to a self-regulation regime under the <a href="http://www.ft.com/editorialcode" aria-label="F T Editorial Code of Practice">FT Editorial Code of Practice</a>.
 			</small>
@@ -132,3 +132,4 @@
 		</div>
 	</div>
 </footer>
+<script async>queue('https://origami-build.ft.com/v2/bundles/js?export=oFooter&modules=o-footer@^5.0.3', null, true)</script>

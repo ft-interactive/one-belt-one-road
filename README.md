@@ -1,6 +1,6 @@
-# [one-belt-one-road](https://ig.ft.com/sites/special-reports/one-belt-one-road/)
+# [one-belt-one-road](https://ig.ft.com/sites/special-reports/one-belt-one-road)
 
-> Special Reports project
+> 
 
 [![Build Status][circle-image]][circle-url] [![Dependency Status][devdeps-image]][devdeps-url]
 
@@ -25,7 +25,7 @@ Build/compile, start a dev server and watches for changes.
 
 ## Uses Starter Kit
 
-This project was scaffolded with [Stater Kit @ddbb1a7](https://github.com/ft-interactive/starter-kit/tree/ddbb1a7).
+This project was scaffolded with [Stater Kit @334a2bb](https://github.com/ft-interactive/starter-kit/tree/334a2bb).
 
 ## Licence
 This software is published by the Financial Times under the [MIT licence](http://opensource.org/licenses/MIT).
