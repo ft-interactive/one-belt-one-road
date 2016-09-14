@@ -18,44 +18,11 @@ const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/financialtimes/cis0irbgt005ygxm2pqnae1df',
   interactive: false,
-}).fitBounds([[37.6155228259, 55.7521641226], [103.23, 35.33]], { padding: 25 });
-
-function isElementOnScreen(id) {
-  const element = document.getElementById(id);
-  const bounds = element.getBoundingClientRect();
-
-  return bounds.top < window.innerHeight * 0.67 && bounds.bottom > window.innerHeight * 0.67;
-}
-
-// function setFont(layer) {
-//   map.setLayoutProperty(layer, 'text-font', ['MetricWeb', 'sans-serif']);
-// }
-
-function setActiveLocation(locationName) {
-  if (locationName === activeLocationName) return;
-
-  map.flyTo(locations[locationName]);
-
-  document.getElementById(locationName).classList.toggle('active');
-  document.getElementById(activeLocationName).classList.toggle('active');
-
-  map.setPaintProperty(`${activeLocationName}-polygon`, 'fill-opacity', 0);
-  map.setPaintProperty(`${locationName}-polygon`, 'fill-opacity', 0.75);
-
-  if (locations[activeLocationName].geometryType !== 'none') {
-    map.setPaintProperty(`${activeLocationName}-feature`,
-        `${locations[activeLocationName].geometryType}-opacity`, 0);
-  }
-
-  if (locations[locationName].geometryType !== 'none') {
-    map.setPaintProperty(`${locationName}-feature`,
-        `${locations[locationName].geometryType}-opacity`, 1);
-  }
-
-  activeLocationName = locationName;
-}
+});
 
 map.on('load', () => {
+  map.fitBounds([[37.6155228259, 55.7521641226], [103.23, 35.33]], { padding: 25 });
+  
   const loader = setInterval(() => {
     if (map.loaded() === true) {
       clearInterval(loader);
@@ -157,6 +124,41 @@ map.on('load', () => {
     }
   }, 10);
 });
+
+function isElementOnScreen(id) {
+  const element = document.getElementById(id);
+  const bounds = element.getBoundingClientRect();
+
+  return bounds.top < window.innerHeight * 0.67 && bounds.bottom > window.innerHeight * 0.67;
+}
+
+// function setFont(layer) {
+//   map.setLayoutProperty(layer, 'text-font', ['MetricWeb', 'sans-serif']);
+// }
+
+function setActiveLocation(locationName) {
+  if (locationName === activeLocationName) return;
+
+  map.flyTo(locations[locationName]);
+
+  document.getElementById(locationName).classList.toggle('active');
+  document.getElementById(activeLocationName).classList.toggle('active');
+
+  map.setPaintProperty(`${activeLocationName}-polygon`, 'fill-opacity', 0);
+  map.setPaintProperty(`${locationName}-polygon`, 'fill-opacity', 0.75);
+
+  if (locations[activeLocationName].geometryType !== 'none') {
+    map.setPaintProperty(`${activeLocationName}-feature`,
+        `${locations[activeLocationName].geometryType}-opacity`, 0);
+  }
+
+  if (locations[locationName].geometryType !== 'none') {
+    map.setPaintProperty(`${locationName}-feature`,
+        `${locations[locationName].geometryType}-opacity`, 1);
+  }
+
+  activeLocationName = locationName;
+}
 
 window.onscroll = () => {
   for (let i = 0; i < locationNames.length; i++) {
