@@ -125,7 +125,7 @@ exec(function(){
 var polyfill_features = [
   'default-3.6',
   'matchMedia',
-  'fetch|always|gated',
+  'fetch',
   'IntersectionObserver',
   'HTMLPictureElement'
 ];
