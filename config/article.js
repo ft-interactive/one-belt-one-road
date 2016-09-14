@@ -37,9 +37,10 @@ export default _ => ({ // eslint-disable-line
   // Byline can by a plain string, markdown, or array of authors
   // if array of authors, url is optional
   byline: [
-    { name: 'Jack Farchy' },
-    { name: 'James Kynge' },
-    { name: 'Chris Campbell' },
+    { name: 'Jack Farchy', url: 'http://search.ft.com/search?queryText=%22jack+farchy%22' },
+    { name: 'James Kynge', url: 'http://search.ft.com/search?queryText=%22james+kynge%22' },
+    { name: 'Chris Campbell', url: 'http://search.ft.com/search?queryText=%22chris+campbell%22' },
+    { name: 'David Blood', url: 'https://twitter.com/davidbjourno' },
   ],
 
 
