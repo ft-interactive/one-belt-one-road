@@ -10,12 +10,8 @@
 // }
 
 .map {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  width: 100vw;
-  height: calc(37.89vh + 46px);
-  z-index: 1;
+  width: 100%;
+  height: calc(37.89vh);
   border-bottom: 1px solid #e9decf;
 }
 
@@ -33,43 +29,59 @@
   position: -ms-sticky;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .sticky:before,
 .sticky:after {
   content: '';
   display: table;
+  clear: both;
 }
 
 @include oGridRespondTo($from: iPhone4, $until: M) {
-  .map {
+  .sticky {
     width: 50vw;
-    height: 100vh;
-    z-index: 0;
     float: left;
+  }
+
+  .map {
+    height: 100vh;
+    z-index: 1;
+    *:after {
+      content: '';
+      // display: table;
+      clear: both;
+    }
   }
 
   .obor-container {
     margin-top: 0;
     margin-left: 50vw;
     border-left: 1px solid #e9decf;
-    -webkit-backdrop-filter: blur(12px);
   }
 }
 
 @include oGridRespondTo(L) {
-  .map {
+  .sticky {
     width: 62.11vw;
-    height: 100vh;
-    z-index: 0;
     float: left;
+  }
+
+  .map {
+    height: 100vh;
+    z-index: 1;
+    *:after {
+      content: "";
+      // display: table;
+      clear: both;
+    }
   }
 
   .obor-container {
     margin-top: 0;
     margin-left: 62.11vw;
     border-left: 1px solid #e9decf;
-    -webkit-backdrop-filter: blur(12px);
   }
 
   .article-body .obor-items {
