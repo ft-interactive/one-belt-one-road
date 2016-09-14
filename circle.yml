@@ -1,6 +1,7 @@
 machine:
+  timezone: Europe/London
   node:
-    version: 6.3.0
+    version: 6.3.1
 
 dependencies:
   cache_directories:
@@ -8,3 +9,21 @@ dependencies:
     - node_modules
   override:
     - npm install
+  pre:
+    - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+    - sudo apt-get update
+    - sudo apt-get install -y libstdc++-4.9-dev
+
+test:
+  post:
+    - npm run preflight
+
+deployment:
+  s3: # this is just a custom name, could be anything
+    branch: /.*/
+    commands:
+      - npm run deploy:confirm
+
+general:
+  artifacts:
+    - dist

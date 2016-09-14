@@ -1,89 +1,115 @@
-<!doctype html>
-<html lang="en-GB" class="core">
-  <head>
-    <include src="includes/html-head.html"></include>
+{% extends "layout.html" %}
 
-    <!--
-      TODO: Fill in these MANDATORY tags and
-            REMOVE THIS COMMENT
+{% set stylesheets = ['https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css'] %}
 
-    <title>@@TITLE</title>
-    <meta name="twitter:title" content="@@TITLE">
-    <meta property="og:title" content="@@TITLE">
+{% block article_body %}
+<!--
+Map
+https://image.webservices.ft.com/v1/images/raw/ftcms:d16a59da-15d8-11e6-9d98-00386a18e39d?source=ig
 
-    <meta name="description" content="@@DESCRIPTION">
-    <meta name="twitter:description" content="@@DESCRIPTION">
-    <meta property="og:description" content="@@DESCRIPTION">
+Master Map
+https://image.webservices.ft.com/v1/images/raw/ftcms:d249dfb0-15d8-11e6-9d98-00386a18e39d?source=ig
 
-    <link rel="canonical" href="@@URL">
-    <meta name="twitter:url" content="@@URL">
-    <meta property="og:url" content="@@URL">
+https://image.webservices.ft.com/v1/images/raw/ftcms:4367bac0-4ce6-11e6-8172-e39ecd3b86fc?source=ig
 
-    <link rel="image_src" href="@@IMAGE">
-    <meta name="twitter:image" content="@@IMAGE">
-    <meta property="og:image" content="@@IMAGE">
-    -->
+-->
 
-    <!--
-      TODO: Select Twitter card type -
-            "summary" or "summary_large_image"
+<div class="obor-items">
+  <div class="obor-item active" id="intro">
+    <p>
+      China’s “One Belt, One Road” project aims to make central Asia more connected to the world, yet even before the initiative was formally announced China had helped to redraw the energy map of the region. It had built an oil pipeline from Kazakhstan, a gas pipeline that allowed Turkmenistan to break its dependence on dealings with Russia and another pipeline that has increased the flow of Russian oil to China.
+    </p>
 
-            Twitter card docs:
-            https://dev.twitter.com/cards/markup
-    -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@ft">
+    <p>
+      Chinese companies have funded and built roads, bridges and tunnels across the region. A ribbon of fresh projects, such as the Khorgos “dry port” on the Kazakh-Chinese border and a railway link connecting Kazakhstan with Iran, is helping increase trade across central Asia.
+    </p>
 
-    <!--
-      TODO: optional author info
-    <meta name="twitter:creator" content="@ft">
-    <meta property="article:author" content="FT Special Reports">
-    -->
+    <p>
+      China is not the only investor in central Asian connectivity. Multilateral financial institutions, such as the Asian Development Bank, the European Bank for Reconstruction and Development and the World Bank have long been investing in the region’s infrastructure. The Kazakh government has its own $9bn stimulus plan, directing money from its sovereign wealth fund to infrastructure investment. Other countries, including Turkey, the US, and the EU have also made improving Eurasian connectivity a part of their foreign policy.
+    </p>
+  </div>
 
-  </head>
-  <body>
+  <div class="obor-item" id="moscow-kazan">
+    <h2>Moscow-Kazan high-speed railway</h2>
+    <p><img src="img/moscow-kazan.jpg" width="100%"/></p>
+    <p>
+      <!-- <img src="img/map1.png" class="obor-minimap" width="50%" align="right" style="margin:0 0 1.6% 1.6%;"> -->
+      A China-led consortium last year won a $375m contract to build a 770km high-speed railway line between Moscow and Kazan. Total investment in the project — set to cut journey time between the cities from 12 hours to 3.5 hours — is some $16.7bn.
+    </p>
+  </div>
 
+  <div class="obor-item" id="khorgos-aktau">
+    <h2>Khorgos-Aktau railway</h2>
+    <p><img src="img/khorgos-aktau-railway.jpg" width="100%"/></p>
+    <p>
+      <!-- <img src="img/map2.png" class="obor-minimap" width="50%" align="right" style="margin:0 0 1.6% 1.6%;"> -->
+      In May last year, Kazakhstan’s President Nursultan Nazarbayev announced a plan to build — with China — a railway from Khorgos on the Chinese border to the Caspian Sea port of Aktau. The scheme dovetails with a $2.7bn Kazakh project to modernise its locomotives and freight and passenger cars and repair 450 miles of rail.
+    </p>
+  </div>
 
-    <!--
-      TODO: REPLACE THIS COMMENT WITH A TRACKING SNIPPET
-      http://ft-interactive.github.io/tracking-snippet-generator/
-    -->
+  <div class="obor-item" id="central-asia-china">
+    <h2>Central Asia-China gas pipeline</h2>
+    <p><img src="img/central-asia-china-gas-pipeline.jpg" width="100%"/></p>
+    <p>
+      <!-- <img src="img/map3.png" class="obor-minimap" width="50%" align="right" style="margin:0 0 1.6% 1.6%;"> -->
+      The 3,666km Central Asia-China gas pipeline predated the new Silk Road but forms the backbone of infrastructure connections between Turkmenistan and China. Chinese-built, it runs from the Turkmenistan/Uzbekistan border to Jingbian in China and cost $7.3bn.
+    </p>
+  </div>
 
-    <include src="includes/header.html"></include>
-    <main role="main">
-      <article class="article">
-        <div class="article-head o-grid-container">
-          <div class="o-grid-row">
-            <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
+  <div class="obor-item" id="central-asia-china-line-d">
+    <h2>Central Asia-China gas pipeline, line D</h2>
+    <p><img src="img/central-asia-pipeline-line-d.jpg" width="100%"/></p>
+    <p>
+      <!-- <img src="img/map4.png" class="obor-minimap" width="50%" align="right" style="margin:0 0 1.6% 1.6%;"> -->
+      China signed agreements with Uzbekistan, Tajikistan and Kyrgyzstan to build a fourth line of the central Asia-China gas pipeline in September 2013. Line D is expected to raise Turkmenistan’s gas export capacity to China from 55bn cu m per year to 85bn cu m.
+    </p>
+  </div>
 
-              <include src="includes/share.html"></include>
+  <div class="obor-item" id="china-kg-uzb">
+    <h2>China-Kyrgyzstan-Uzbekistan railway</h2>
+    <p><img src="img/china-kyrgyzstan-uzbekistan-railway.jpg" width="100%"/></p>
+    <p>
+      <!-- <img src="img/map5.png" class="obor-minimap" width="50%" align="right" style="margin:0 0 1.6% 1.6%;"> -->
+      Kyrgyzstan’s prime minister Temir Sariev said in December 2015 that the construction of the delayed Kyrgyz leg of the China-Kyrgyzstan-Uzbekistan railway would start in 2016. In September, Uzbekistan said it had finished 104km of the 129km Uzbek stretch of the railway.
+    </p>
+  </div>
 
-              <include src="includes/article-head.html"></include>
+{{ Ads.MidContent(flags.ads) }}
 
-            </header>
-          </div>
-        </div>
-        <div class="article-body o-typography-body-wrapper">
+  <div class="obor-item" id="khorgos-gateway">
+    <h2>Khorgos Gateway</h2>
+    <p><img src="img/khorgos-gateway.jpg" width="100%"/></p>
+    <p>
+      <!-- <img src="img/map6.png" class="obor-minimap" width="50%" align="right" style="margin:0 0 1.6% 1.6%;"> -->
+      Khorgos Gateway, a dry port on the China-Kazakh border that is seen as a key cargo hub on the new Silk Road, began operations in August 2015. China’s Jiangsu province has agreed to invest more than $600m over five years to build logistics and industrial zones around Khorgos.
+    </p>
+  </div>
 
+  <div class="obor-item" id="laptops-chicken">
+    <h2>Trans-Asian railways</h2>
+    <p><img src="img/khorgos-gateway.jpg" width="100%"/></p>
+    <p>
+      <!-- <img src="img/map6.png" class="obor-minimap" width="50%" align="right" style="margin:0 0 1.6% 1.6%;"> -->
+      Whether transporting frozen poultry or electronic equipment, subsidies from China are making new overland train routes across central Asia an increasingly attractive proposition for logistics businesses. Cheaper than by air, and faster than by sea, increased overland rail networks could help the region capture valuable business and capitalise on increased trade from China to Europe through overland routes across Belarus, Russia and Kazakhstan.
+    </p>
+  </div>
 
+  <div class="obor-item" id="china-tehran">
+    <h2>Rail connection to Tehran</h2>
+    <p><img src="img/khorgos-gateway.jpg" width="100%"/></p>
+    <p>
+      <!-- <img src="img/map6.png" class="obor-minimap" width="50%" align="right" style="margin:0 0 1.6% 1.6%;"> -->
+      The first freight train from China arrived in Tehran in February 2016 in the wake of China’s One Belt One Road project which has seen ongoing investment in overland rail across central Asia. This, plus Iran’s landmark nuclear agreement with the west in 2015, has paved the way for deals with France and Germany for a much-needed modernisation of the country’s railway network and provided a boost to Chinese-Iranian trade.
+    </p>
+  </div>
 
-          <!-- TODO:
-                replace with your article body html
-          -->
-          <include src="includes/mock-article-content.html"></include>
-
-
-
-        </div>
-      </article>
-    </main>
-    <include src="includes/footer.html"></include>
-
-    <script async>
-    queue([
-      'scripts/main.js'
-    ]);
-    </script>
-
-  </body>
-</html>
+  <div class="obor-item" id="new-delhi-china">
+    <h2>China-Pakistan highway</h2>
+    <p><img src="img/khorgos-gateway.jpg" width="100%"/></p>
+    <p>
+      <!-- <img src="img/map6.png" class="obor-minimap" width="50%" align="right" style="margin:0 0 1.6% 1.6%;"> -->
+      Concerns over what China’s new Silk Road project will mean for India are concentrated around Chinese plans to invest $46bn in a new "economic corridor" between China and Pakistan. The initiative will pass through the disputed region of Kashmir and Indian policy analysts remain divided on whether the project is a strategic threat or an economic opportunity for their country.
+    </p>
+  </div>
+</div>
+{% endblock %}

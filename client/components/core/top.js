@@ -34,20 +34,31 @@ function exec(script) {
   if (!window.cutsTheMustard) return;
   var s = typeof script;
   if (s === 'string') {
-    add_script.apply(window, arguments);
+    try {
+      add_script.apply(window, arguments);
+    } catch(e) {
+      console.error(e);
+    }
   } else if (s === 'function') {
-    script();
+    try {
+      script();
+    } catch(e) {
+      console.error(e);
+    }
   } else if (script) {
-    try{
+    try {
       var args = Array.prototype.slice.call(arguments, 1);
       for (var i = 0; i < script.length; i++) {
         exec.apply(window, [script[i]].concat(args));
       }
-    } catch(e){}
+    } catch(e){
+      console.error(e);
+    }
   }
 }
 
 var queued_scripts = [];
+var low_priority_queue = [];
 
 function queue(src, cb, low_priority) {
   var args = [src, true, !!low_priority, cb];
@@ -57,16 +68,44 @@ function queue(src, cb, low_priority) {
     return;
   }
 
-  queued_scripts.push(args);
+  if (low_priority) {
+    low_priority_queue.push(args);
+  } else {
+    queued_scripts.push(args);
+  }
 }
 
-function clear_queue() {
-  var arr = queued_scripts.slice(0);
-  queued_scripts = null;
+function empty_queue(q) {
+  var arr = q.slice(0);
   for (var i = 0; i < arr.length; i++) {
     exec.apply(window, arr[i]);
   }
-  document.documentElement.className = document.documentElement.className + ' js-success';
+}
+
+function clear_queue() {
+  empty_queue(queued_scripts);
+  queued_scripts = null;
+  var callback = low_priority_queue.length
+                        ? low_priority_queue[low_priority_queue.length - 1][3]
+                        : null;
+
+  var done = function () {
+    document.documentElement.className = document.documentElement.className + ' js-success';
+  }
+
+  var onLoaded = typeof callback !== 'function' ? done : function() {
+    callback();
+    done();
+  }
+
+  if (low_priority_queue.length) {
+    low_priority_queue[low_priority_queue.length - 1][3] = onLoaded;
+  } else {
+    setTimeout(function(){onLoaded()},1);
+  }
+
+  empty_queue(low_priority_queue);
+  low_priority_queue = null;
 }
 
 window.queue = queue;
@@ -83,22 +122,17 @@ exec(function(){
   ].join(' '));
 });
 
-
-
-// Load the polyfill service with custom features. Exclude big unneeded polyfills.
-// and use ?callback= to clear the queue of scripts to load
 var polyfill_features = [
-  'default',
-  'requestAnimationFrame',
-  'Promise',
+  'default-3.6',
   'matchMedia',
-  'HTMLPictureElement',
-  'fetch|always|gated'
+  'fetch|always|gated',
+  'IntersectionObserver',
+  'HTMLPictureElement'
 ];
 
 var polfill_url = 'https://cdn.polyfill.io/v2/polyfill.min.js?callback=clear_queue&features='
                     + polyfill_features.join(',')
-                    + '&excludes=Symbol,Symbol.iterator,Symbol.species,Map,Set';
+                    + '&excludes=Symbol,Symbol.iterator,Symbol.species';
 
 exec(polfill_url, true, true)
 

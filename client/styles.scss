@@ -1,0 +1,96 @@
+@import 'o-colors/main';
+@import 'o-grid/main';
+@import 'components/core/main';
+
+@include oGridAddLayout($layout-name: iPhone4, $layout-width: 480px);
+
+// header.o-header{
+//   position: relative;
+//   z-index: 2 !important;
+// }
+
+.map {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: calc(37.89vh + 46px);
+  z-index: 1;
+  border-bottom: 1px solid #e9decf;
+}
+
+.obor-container {
+  position: relative;
+  // margin-top: 37.89vh;
+  overflow-y: hidden;
+  background-color: rgba(255, 241, 224, 0.85);
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.sticky:before,
+.sticky:after {
+  content: '';
+  display: table;
+}
+
+@include oGridRespondTo($from: iPhone4, $until: M) {
+  .map {
+    width: 50vw;
+    height: 100vh;
+    z-index: 0;
+    float: left;
+  }
+
+  .obor-container {
+    margin-top: 0;
+    margin-left: 50vw;
+    border-left: 1px solid #e9decf;
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+@include oGridRespondTo(L) {
+  .map {
+    width: 62.11vw;
+    height: 100vh;
+    z-index: 0;
+    float: left;
+  }
+
+  .obor-container {
+    margin-top: 0;
+    margin-left: 62.11vw;
+    border-left: 1px solid #e9decf;
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .article-body .obor-items {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.obor-item {
+  opacity: 0.25;
+  &.active {
+    opacity: 1;
+  }
+}
+
+.obor-items:last-child {
+    margin-bottom: calc(0.8em + 40px);
+}
+
+.o-footer {
+  position: relative;
+  z-index: 2;
+  margin-top: 0 !important;
+}
