@@ -1,0 +1,64 @@
+{% macro SiteHeader(on=true) %}
+{% if on %}
+<div class="o-ads above-header-advert advert advert--background advert--transition advert--reserve-90 o-ads--center"
+  data-o-ads-name="entry"
+  data-o-ads-center="true"
+  data-o-ads-targeting="pos=top"
+  data-o-ads-formats-default="false"
+  data-o-ads-formats-small="false"
+  data-o-ads-formats-medium="Leaderboard,Responsive"
+  data-o-ads-formats-large="SuperLeaderboard,Leaderboard,Responsive"
+  data-o-ads-formats-extra="Billboard,SuperLeaderboard,Leaderboard,Responsive"
+  data-o-ads-lazy-load="true"
+  aria-hidden="true">
+</div>
+{% endif %}
+{% endmacro %}
+
+{% macro MidContent(on=true, collapseEmpty=true, lazyload=true, withRail=false, label=false) %}
+{% set classes = 'above-header-advert advert advert--reserve-250' %}
+{% if on %}
+<div class="o-ads o-ads--center {{ classes }}"
+  data-o-ads-name="mid"
+  data-o-ads-center="true"
+  data-o-ads-targeting="pos=mid"
+  {%- if label %}data-o-ads-label="false"{% endif -%}
+  {%- if withRail %}
+  data-o-ads-formats-default="MediumRectangle,Responsive"
+  data-o-ads-formats-small="MediumRectangle,Responsive"
+  data-o-ads-formats-medium="MediumRectangle,Responsive"
+  data-o-ads-formats-large="false"
+  data-o-ads-formats-extra="false"
+  {% else %}
+  data-o-ads-formats="MediumRectangle,Responsive"
+  {% endif -%}
+  {%- if lazyload %} data-o-ads-lazy-load="true" {% endif -%}
+  {%- if collapseEmpty %} data-o-ads-collapse-empty="true" {% endif -%}
+  aria-hidden="true">
+</div>
+{% endif %}
+{% endmacro %}
+
+{% macro RightRail(on=true, collapseEmpty=true, lazyload=true, withContentWell=false, label=false) %}
+{% set classes = 'advert--mid-non-responsive-large sidebar-advert' %}
+{% if on %}
+<div class="o-ads o-ads--center {{ classes }}"
+  data-o-ads-name="mid-non-responsive-large"
+  data-o-ads-center="true"
+  data-o-ads-targeting="pos=mid"
+  {%- if label %}data-o-ads-label="false"{% endif -%}
+  {%- if withContentWell %}
+  data-o-ads-formats-default="false"
+  data-o-ads-formats-small="false"
+  data-o-ads-formats-medium="false"
+  data-o-ads-formats-large="MediumRectangle,HalfPage"
+  data-o-ads-formats-extra="MediumRectangle,HalfPage"
+  {% else %}
+  data-o-ads-formats="MediumRectangle,Responsive"
+  {% endif -%}
+  {%- if lazyload %} data-o-ads-lazy-load="true" {% endif -%}
+  {%- if collapseEmpty %} data-o-ads-collapse-empty="true" {% endif -%}
+  aria-hidden="true">
+</div>
+{% endif %}
+{% endmacro %}

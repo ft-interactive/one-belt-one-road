@@ -1,5 +1,5 @@
-const mapboxgl = require('mapbox-gl');
 const stickyfill = window.Stickyfill;
+import mapboxgl from 'mapbox-gl';
 // const textLayers = [
 //   'obor_port_labels',
 //   'obor_country_labels',

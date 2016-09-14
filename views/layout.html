@@ -1,27 +1,19 @@
+{%- import "ads.html" as Ads -%}
+
 {% set test_comments_uuid = "3a499586-b2e0-11e4-a058-00144feab7de" if not flags.prod and flags.comments else "" %}
 <!doctype html>
 <html lang="en-GB" class="core"
     data-buildtime="{{ now() | isotime }}"
     data-content-id="{{ id if id else test_comments_uuid }}">
   <head>
+    <script src="stickyfill.min.js"></script>
     {% block prependhead %}{% endblock -%}
     {% include "includes/html-head.html" %}
     {% block appendhead %}{% endblock -%}
   </head>
   <body>
+    {{ Ads.SiteHeader(flags.ads) }}
     {% if flags.ads %}
-    <div class="o-ads above-header-advert advert advert--background advert--transition advert--reserve-90 o-ads--center"
-      data-o-ads-name="entry"
-      data-o-ads-center="true"
-      data-o-ads-targeting="pos=top"
-      data-o-ads-formats-default="false"
-      data-o-ads-formats-small="false"
-      data-o-ads-formats-medium="Leaderboard,Responsive"
-      data-o-ads-formats-large="SuperLeaderboard,Leaderboard,Responsive"
-      data-o-ads-formats-extra="Billboard,SuperLeaderboard,Leaderboard,Responsive"
-      data-o-ads-lazy-load="true"
-      aria-hidden="true">
-    </div>
     <script async>queue('https://origami-build.ft.com/v2/bundles/js?export=oAds&modules=o-ads@^4.3.2', null, true)</script>
     {% endif %}
 
@@ -79,7 +71,6 @@
     {% endif %}
     <script async>queue('https://origami-build.ft.com/v2/bundles/js?export=oFooter&modules=o-footer@^5.0.1', null, true)</script>
 
-    <script src="stickyfill.min.js"></script>
     <script async>
     queue([
       'index.js',

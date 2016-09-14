@@ -94,3 +94,9 @@
   <meta property="ft.track:microsite_name" content="{{ tracking.micrositeName }}"/>
   {% endif %}
 {% endif -%}
+
+{% if flags.ads %}
+<script type="application/json" data-o-ads-config>
+{"gpt": {"unitName" : "5887/ft.com/{{ ads.site }}/{{ ads.zone }}"}}
+</script>
+{% endif %}
