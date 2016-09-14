@@ -131,12 +131,12 @@ module.exports = {
       }
     });
   },
-
-  'Tracking code should be present': client => {
-    client.expect
-      .element('img[src*="https://spoor-api.ft.com/px.gif"]')
-      .to.be.present.before(1000);
-  },
+  //
+  // 'Tracking code should be present': client => {
+  //   client.expect
+  //     .element('img[src*="https://spoor-api.ft.com/px.gif"]')
+  //     .to.be.present.before(1000);
+  // },
 
   'Sharing should be present': client => {
     client.expect.element('.o-share').to.be.present;
@@ -189,14 +189,14 @@ module.exports = {
     });
   },
 
-  'If optional timestamp tag is present, check it is defined': client => {
-    client.element('css selector', '.article__timestamp', result => {
-      if (result.value && result.value.ELEMENT) {
-        client.expect.element('.article__timestamp')
-          .text.to.not.equal('');
-      }
-    });
-  },
+  // 'If optional timestamp tag is present, check it is defined': client => {
+  //   client.element('css selector', '.article__timestamp', result => {
+  //     if (result.value && result.value.ELEMENT) {
+  //       client.expect.element('.article__timestamp')
+  //         .text.to.not.equal('');
+  //     }
+  //   });
+  // },
 
   'If optional byline tag is present, check it is populated': client => {
     client.element('css selector', '.article__byline', result => {

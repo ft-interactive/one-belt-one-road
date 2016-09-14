@@ -29,9 +29,9 @@ export default _ => ({ // eslint-disable-line
   mainImage: {
     title: '',
     description: '',
-    url: '',
-    width: 2048, // ensure correct width
-    height: 1152, // ensure correct height
+    url: 'https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2F3772dbac-15f8-11e6-b197-a4af20d5575e?source=next&fit=scale-down&width=700',
+    width: 700,
+    height: 394,
   },
 
   // Byline can by a plain string, markdown, or array of authors
@@ -44,10 +44,10 @@ export default _ => ({ // eslint-disable-line
 
 
   // Appears in the HTML <title>
-  title: '',
+  title: 'One belt, one road - Special Report',
 
   // meta data
-  description: '',
+  description: 'A ribbon of road, rail and energy projects to help increase trade',
 
   /*
   TODO: Select Twitter card type -
