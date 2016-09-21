@@ -37,7 +37,6 @@
     "gulp-sass": "^2.3.2",
     "gulp-util": "^3.0.7",
     "inline-source": "github:aendrew/inline-source",
-    "mapbox-gl": "^0.21.0",
     "markdown-it": "^7.0.1",
     "merge-stream": "^1.0.0",
     "nodemon": "^1.10.2",
@@ -86,5 +85,8 @@
     "prestart": "npm run clean",
     "start": "nodemon --watch gulpfile.babel.js --exec 'gulp watch'",
     "test": "npm run lint && npm run build"
+  },
+  "dependencies": {
+    "mapbox-gl": "^0.21.0"
   }
 }
