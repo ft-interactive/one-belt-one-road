@@ -1,5 +1,6 @@
-const stickyfill = window.Stickyfill;
 import mapboxgl from 'mapbox-gl';
+
+const stickyfill = window.Stickyfill;
 // const textLayers = [
 //   'obor_port_labels',
 //   'obor_country_labels',
@@ -21,7 +22,7 @@ const map = new mapboxgl.Map({
 });
 
 map.on('load', () => {
-  map.fitBounds([[37.6155228259, 55.7521641226], [103.23, 35.33]], { padding: 25 });
+  map.fitBounds([[37.6155228259, 35.33], [103.23, 55.7521641226]], { padding: 25 });
 
   const loader = setInterval(() => {
     if (map.loaded() === true) {
