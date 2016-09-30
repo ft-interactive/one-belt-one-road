@@ -87,6 +87,6 @@
     "test": "npm run lint && npm run build"
   },
   "dependencies": {
-    "mapbox-gl": "^0.21.0"
+    "mapbox-gl": "^0.24.0"
   }
 }
