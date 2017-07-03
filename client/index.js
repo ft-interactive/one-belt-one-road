@@ -1,4 +1,5 @@
 import mapboxgl from 'mapbox-gl';
+import accessToken from './access-token';
 
 const stickyfill = window.Stickyfill;
 // const textLayers = [
@@ -13,7 +14,7 @@ let activeLocationName = 'intro';
 let startZoom = {};
 let locations = {};
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZmluYW5jaWFsdGltZXMiLCJhIjoiY0JjekRZNCJ9.WyRznmEEeKdrKLnfr4NpTA';
+mapboxgl.accessToken = accessToken;
 
 const map = new mapboxgl.Map({
   container: 'map',
